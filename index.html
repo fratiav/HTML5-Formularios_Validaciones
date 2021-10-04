@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Francisco Jose Ratia Vargas">
+        <meta name="description" content="Formularios en HTML5">
+        <meta name="keywords" content="html5,css3,form,javascript,html,css,input,text,submit">
+        <title>HTML5 - FORMULARIOS</title>
+
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <!--JS-->
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h2>FORMULARIO - TIPOS DE INPUTS</h2>
+        <!--Los campos tienes atributos: Placeholder, required, multiple (mas de un dato por campo separados por coma), autofocus (pone el foco en este), pattern (expresiones regulares de validacion), form (añadir elementos a un formulario fuera de las etiquetas form)-->
+        <form name="miformulario" id="miformulario" method="GET" autocomplete="off">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Introduce nombre" multiple autofocus><br>
+            <label for="apellidos">Apellidos: </label>
+            <input type="text" name="apellidos" id="apellidos" required placeholder="Introduce apellidos"><br>
+            <label for="edad">Edad: </label>
+            <input type="number" name="edad" id="edad" min="18" max="100" step="1"><br>
+            <label for="telefono">Teléfono: </label>
+            <input type="tel" name="telefono" id="telefono" required placeholder="XXX-XXX-XXX"><br>
+            <label for="busqueda">Busqueda: </label>
+            <input type="search" name="busqueda" id="busqueda" autocomplete="on"><br>
+            <label for="url">URL: </label>
+            <input type="url" name="url" id="url"><br>
+            <label for="range">Rango: </label>
+            <input type="range" name="range" id="range"><br>
+            <label for="fecha">Fecha: </label>
+            <input type="date" name="fecha" id="fecha"><br>
+            <label for="hora">Hora: </label>
+            <input type="time" name="hora" id="hora"><br>
+            <label for="fechahora">Fecha y hora: </label>
+            <input type="datetime" name="fechahora" id="fechahora"><br>
+            <label for="mes">Mes: </label>
+            <input type="month" name="mes" id="mes"><br>
+            <label for="semana">Semana: </label>
+            <input type="week" name="semana" id="semana"><br>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email"><br>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password"><br>
+            <label for="rep-password">Repetir password: </label>
+            <input type="password" name="rep-password" id="rep-password"><br>
+            <input type="submit" value="Enviar datos" id="nombre">
+        </form>
+        <br><br>
+
+        <h2>FORMULARIO - ELEMENTO DATALIST Y VALIDACION JS</h2>
+        <!--Elemento Datalist, validacion con setCustomValidity()-->
+        <form name="registro" method="GET">
+            <!--Datalist especifica las opciones de un desplegable. Tiene que tener de id el mismo nombre que el list del input-->
+            <datalist id="informacion">
+                <option value="636446253" label="   Telefono 1">
+                <option value="636442353" label="   Telefono 2">
+                <option value="612312453" label="   Telefono 3">
+            </datalist>
+            <input type="text" name="telefono" id="telefono" list="informacion" autocomplete="off">
+            <input type="text" name="nombreVal" id="nombreVal" placeholder="Nombre" autocomplete="off">
+            <input type="submit" value="Validar nombre">
+        </form>
+        <br><br>
+
+        <h2>FORMULARIO - METODO INVALID</h2>
+        <!--Metodo Invalid-->
+        <form name="nuevoform" method="GET">
+            <label for="letras">Letras</label>
+            <input pattern="[A-Za-z]{3}" id="letras" name="letras" maxlength="5" placeholder="Letras" required>
+            <label for="correo">Email</label>
+            <input type="email" name="correo" id="correo" placeholder="Email" required>
+            <label for="miedad">Edad</label>
+            <input type="range" name="miedad" id="miedad" min="0" max="120" value="30" step="30">
+            <!--El objeto "output" sirve para mostrar el resultado de una operación en html-->
+            <output id="edadOut">Output de edad</output>
+            <input type="submit" id="enviarform" name="enviarform" value="Validar">
+        </form>
+    </body>
+</html>
